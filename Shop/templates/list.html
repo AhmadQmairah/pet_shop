@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+	List
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="row ml-5 mr-5 ">
+{% for pet in pets  %}
+
+<div class="col-12 col-sm-10 col-md-6 col-lg-4 col-lx-4">
+		
+	
+
+
+	<div class="card mt-4 ml-auto mr-auto animated zoomIn" style="width: 18rem;">
+		<img class="card-img-top MyImg" src="{{pet.image.url}}" alt="Card image cap" style="max-width:286px ;max-height: 160px">
+		<div class="card-body">
+			<h5 class="card-title text-center">{{pet.name}}  </h5>
+			<p class="card-text text-center" style="min-width:400x ;min-height: 10px"><small>
+		{{pet.price}}
+	</small>  </p>
+			<a href="{% url 'animal_detail' pet.id %}" class="btn btn-primary btn-block ">Buy...</a>
+		</div>
+	</div>
+	</div>
+
+	
+{% endfor %}
+	
+{% endblock content %}
